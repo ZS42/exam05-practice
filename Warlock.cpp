@@ -1,0 +1,42 @@
+#include "Warlock.hpp"
+
+Warlock::Warlock()
+{
+
+
+}
+
+Warlock::Warlock(const Warlock &object)
+{
+	*this = object;
+}
+Warlock & Warlock::operator=(const Warlock &object)
+{
+	this->_name = object._name;
+	this->_title = object._title;
+	return(*this);
+}
+Warlock::Warlock(std::string name, std::string title): _name(name), _title(title)
+{
+	std::cout << getName() << ": This looks like another boring day." << std::endl;
+}
+Warlock::~Warlock()
+{
+	std::cout << getName() << ": My job here is done!" << std::endl;
+}
+std::string const & Warlock::getName()const
+{
+	return(_name);
+}
+std::string const & Warlock::getTitle()const
+{
+	return(_title);
+}
+void Warlock::setTitle(std::string const &title)
+{
+	_title = title;
+}
+void Warlock::introduce() const
+{
+	std::cout << getName() << ": I am " << getName() << ", " << getTitle() << std::endl;
+}
