@@ -1,19 +1,20 @@
 #pragma once
 
-#include <iostream>
+# include <iostream>
 
-class Warlock{
-	Warlock();
-	Warlock(const Warlock &object);
-	Warlock & operator=(const Warlock &object);
+class Warlock
+{
 	std::string _name;
 	std::string _title;
+	Warlock();
+	Warlock(const Warlock &object);
+	Warlock &operator=(const Warlock & object);
 	public:
-	Warlock(std::string name, std::string title);
+	// must be const & otherwise doesnt compile
+	Warlock(const std::string& name, const std::string& title);
 	~Warlock();
-	std::string const & getName()const;
-	std::string const & getTitle()const;
-	// void setName(std::string name);
-	void setTitle(std::string const &title);
-	void introduce() const;
+	const std::string &getName()const;
+	const std::string &getTitle()const;
+	void setTitle(const std::string &title);
+	void introduce()const;
 };
