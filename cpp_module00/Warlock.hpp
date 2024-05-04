@@ -10,8 +10,10 @@ class Warlock
 	Warlock(Warlock &object);
 	Warlock operator=(Warlock &object);
 	public:
+	// must have &
 	Warlock(const std::string &name, const std::string &title);
 	~Warlock();
+	// must have two const and return reference
 	const std::string &getName()const;
 	const std::string &getTitle()const;
 	void setTitle(const std::string &title);
