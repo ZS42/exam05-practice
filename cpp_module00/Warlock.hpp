@@ -9,7 +9,7 @@ class Warlock
 	Warlock();
 	// no & on returned Warlock
 	Warlock(Warlock &object);
-	Warlock operator=(Warlock &object);
+	Warlock &operator=(Warlock &object);
 	public:
 	// must have &
 	Warlock(const std::string &name, const std::string &title);
