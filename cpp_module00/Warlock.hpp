@@ -7,6 +7,7 @@ class Warlock
 	std::string _name;
 	std::string _title;
 	Warlock();
+	// no & on returned Warlock
 	Warlock(Warlock &object);
 	Warlock operator=(Warlock &object);
 	public:
