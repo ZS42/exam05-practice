@@ -14,6 +14,7 @@ class ATarget
 	ATarget(ATarget &object);
 	ATarget &operator=(ATarget &object);
 	ATarget(const std::string &type);
+	// no need to write virtual in cpp
 	virtual ~ATarget();
 	const std::string &getType()const;
 	void getHitBySpell(const ASpell &spell)const;
