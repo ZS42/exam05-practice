@@ -13,6 +13,7 @@ class ASpell
 	public:
 	ASpell();
 	ASpell(ASpell &object);
+// must use get in following bc cant access with just _name in abstarct class
 	ASpell &operator=(ASpell &object);
 	ASpell(const std::string &name, const std::string &effects);
 	virtual ~ASpell();
