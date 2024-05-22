@@ -3,6 +3,7 @@
 #include <iostream>
 #include "ASpell.hpp"
 
+// all public show inheritance above and below
 class Fwoosh:public ASpell
 {
 	public:
