@@ -17,6 +17,7 @@ class ATarget
 	// no need to write virtual in cpp
 	virtual ~ATarget();
 	const std::string &getType()const;
+// needs to be const function
 	void getHitBySpell(const ASpell &spell)const;
 	virtual ATarget *clone() const = 0;
 };
