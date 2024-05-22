@@ -21,5 +21,6 @@ class ASpell
 	const std::string &getEffects()const;
 // launch must be const function
 	void launch(const ATarget &target) const;
+// virtual pure functions must be const in parent and child
 	virtual ASpell *clone() const = 0;
 };
