@@ -19,6 +19,7 @@ class ASpell
 	virtual ~ASpell();
 	const std::string &getName()const;
 	const std::string &getEffects()const;
+// launch must be const function
 	void launch(const ATarget &target) const;
 	virtual ASpell *clone() const = 0;
 };
