@@ -11,6 +11,7 @@ class ASpell
 	std::string _name;
 	std::string _effects;
 	public:
+// all coplien public so can access in child
 	ASpell();
 	ASpell(ASpell &object);
 // must use get in following bc cant access with just _name in abstarct class
