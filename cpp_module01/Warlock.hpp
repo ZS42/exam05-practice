@@ -20,7 +20,7 @@ class Warlock
 	const std::string &getTitle()const;
 	void setTitle(const std::string &title);
 	void learnSpell(ASpell *spell);
-// none of the new functions are constant
+// none of the new functions are constant but target is const
 	void forgetSpell(std::string spellName);
 	void launchSpell(std::string spellName, const ATarget &target);
 	void introduce() const;
