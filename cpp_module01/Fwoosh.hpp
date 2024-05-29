@@ -10,6 +10,6 @@ class Fwoosh:public ASpell
 // show inherits from ASPell and put name and effect in inverted commas
 	Fwoosh();
 	~Fwoosh();
-	// no need for =0 in child or virtual in cpp. Remember clone must use new bc it is kept seperately
-	virtual Fwoosh *clone() const;
+	// no need for =0 in child or virtual in cpp or hpp. Remember clone must use new bc it is kept seperately
+	Fwoosh *clone() const;
 };
