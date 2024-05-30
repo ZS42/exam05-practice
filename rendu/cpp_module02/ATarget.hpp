@@ -13,12 +13,13 @@ class ATarget
         ATarget();
         ATarget(ATarget const &object);
         ATarget &operator=(ATarget const &object);
+    
         ATarget(std::string const &type);
-        virtual ~ATarget();
+        virtual~ATarget();
 
-        const std::string &getType()const;
+        std::string const &getType()const;
 
-        void getHitBySpell(ASpell const &spell)const;
+        void    getHitBySpell(ASpell const &spell)const;
 
         virtual ATarget *clone()const=0;
 };

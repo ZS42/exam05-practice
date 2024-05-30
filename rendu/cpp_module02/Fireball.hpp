@@ -6,9 +6,11 @@
 class Fireball:public ASpell
 {
     public:
-    Fireball();
-    Fireball(Fireball const &object);
-    Fireball &operator=(Fireball const &object);
-    ~Fireball();
-    ASpell *clone()const;
+        Fireball();
+        Fireball(Fireball const &object);
+        Fireball &operator=(Fireball const &object);
+    
+        ~Fireball();
+
+        ASpell *clone()const;
 };

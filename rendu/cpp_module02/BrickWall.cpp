@@ -6,7 +6,7 @@ BrickWall::BrickWall():ATarget("Inconspicuous Red-brick Wall")
 }
 BrickWall::BrickWall(BrickWall const &object)
 {
-    (void)object;
+    *this = object;
 }
 BrickWall &BrickWall::operator=(BrickWall const &object)
 {
@@ -19,5 +19,5 @@ BrickWall::~BrickWall()
 }
 ATarget *BrickWall::clone()const
 {
-    return new BrickWall();
+    return (new BrickWall);
 }

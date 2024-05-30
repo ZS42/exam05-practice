@@ -9,18 +9,20 @@ class Warlock
 {
     std::string _name;
     std::string _title;
+
     Warlock();
     Warlock(Warlock const &object);
     Warlock &operator=(Warlock const &object);
-    std::map<std::string, ASpell *> spellCollection;
+    
+    std::map<std::string, ASpell *> mySpells;
     public:
         Warlock(std::string const &name, std::string const &title);
         ~Warlock();
 
-        const std::string &getName()const;
-        const std::string &getTitle()const;
+        std::string const &getName()const;
+        std::string const &getTitle()const;
 
-        void setTitle(std::string const &title);
+        void    setTitle(std::string const &title);
 
         void introduce() const;
 

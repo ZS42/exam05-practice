@@ -17,69 +17,42 @@ Warlock &Warlock::operator=(Warlock const &object)
     }
     return(*this);
 }
-Warlock::Warlock(std::string const &name, std::string const &title):_name(name),_title(title)
+Warlock::Warlock(std::string const &name, std::string const &title):_name(name), _title(title)
 {
     std::cout << _name << ": This looks like another boring day.\n";
 }
 Warlock::~Warlock()
-{ 
-    // for (std::map<std::string, ASpell*>::iterator it=spellCollection.begin(); it != spellCollection.end() ;it++)
-    //     delete it->second;
-        // spellCollection.erase(it);
+{
     std::cout << _name << ": My job here is done!\n";
 }
-const std::string &Warlock::getName()const
+std::string const &Warlock::getName()const
 {
     return(_name);
 }
-const std::string &Warlock::getTitle()const
+std::string const &Warlock::getTitle()const
 {
     return(_title);
 }
-void Warlock::setTitle(std::string const &title)
+void    Warlock::setTitle(std::string const &title)
 {
     _title = title;
 }
 void Warlock::introduce() const
 {
-    std::cout << _name << ": I am " << _name <<", " << _title << "!\n";
+    std::cout << _name << ": I am " << _name << ", " << _title << "!\n";
 }
 void Warlock::learnSpell(ASpell *spell)
 {
     if (spell)
-        mySpellBook.learnSpell(spell);
+        spellCollection.learnSpell(spell);
 }
 void Warlock::forgetSpell(std::string spellName)
 {
-    // std::map<std::string, ASpell *>::iterator it = spellCollection.find(spellName);
-    // if (it != spellCollection.end())
-        // spellCollection.erase(spellName);
-        mySpellBook.forgetSpell(spellName);
+    spellCollection.forgetSpell(spellName);
 }
 void Warlock::launchSpell(std::string spellName, ATarget const &target)
 {
-    ASpell *spell = mySpellBook.createSpell(spellName);
+    ASpell *spell = spellCollection.createSpell(spellName);
     if (spell)
         spell->launch(target);
-    delete spell;
 }
-// void	Warlock::learnSpell(ASpell* spell)
-// {
-// 	if (spell)
-// 		spellCollection[spell->getName()] = spell->clone();
-// }
-
-// void	Warlock::forgetSpell(std::string spell)
-// {
-// 	std::map<std::string, ASpell*>::iterator delIt = spellCollection.find(spell);
-// 	if (delIt != spellCollection.end())
-// 	{
-// 		delete delIt->second;
-// 		spellCollection.erase(delIt);
-// 	}
-// }
-// void	Warlock::launchSpell(std::string spell, const ATarget& target)
-// {
-// 	if (spellCollection.find(spell) != spellCollection.end())
-// 		spellCollection[spell]->launch(target);
-// }

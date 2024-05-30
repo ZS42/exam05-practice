@@ -13,47 +13,30 @@ SpellBook &SpellBook::operator=(SpellBook const &object)
     (void)object;
     return(*this);
 }
-
 SpellBook::~SpellBook()
-{ 
-    for (std::map<std::string, ASpell*>::iterator it=mySpellBook.begin(); it != mySpellBook.end() ;it++)
+{
+    for (std::map<std::string, ASpell *>::iterator it = mySpells.begin(); it != mySpells.end(); it++)
         delete it->second;
 }
+
 void SpellBook::learnSpell(ASpell *spell)
 {
     if (spell)
-        mySpellBook.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
+        mySpells.insert(std::pair<std::string, ASpell *>(spell->getName(), spell->clone()));
 }
-void SpellBook::forgetSpell(std::string spellName)
+void SpellBook::forgetSpell(std::string const &spellName)
 {
-    std::map<std::string, ASpell *>::iterator it = mySpellBook.find(spellName);
-    if (it != mySpellBook.end())
-        mySpellBook.erase(spellName);
+    std::map<std::string, ASpell *>::iterator it = mySpells.find(spellName);
+    if (it != mySpells.end())
+    {
+        delete it->second;
+        mySpells.erase(it);
+    }
 }
-ASpell *SpellBook::createSpell(std::string spellName)
+ASpell *SpellBook::createSpell(std::string const &spellName)
 {
-    if (mySpellBook.find(spellName) != mySpellBook.end())
-        return (mySpellBook[spellName]->clone());
+    if (mySpells.find(spellName) != mySpells.end())
+        return (mySpells[spellName]);
     else
-        return (NULL);
+        return(NULL);
 }
-// void	SpellBook::learnSpell(ASpell* spell)
-// {
-// 	if (spell)
-// 		spellCollection[spell->getName()] = spell->clone();
-// }
-
-// void	SpellBook::forgetSpell(std::string spell)
-// {
-// 	std::map<std::string, ASpell*>::iterator delIt = spellCollection.find(spell);
-// 	if (delIt != spellCollection.end())
-// 	{
-// 		delete delIt->second;
-// 		spellCollection.erase(delIt);
-// 	}
-// }
-// void	SpellBook::launchSpell(std::string spell, const ATarget& target)
-// {
-// 	if (spellCollection.find(spell) != spellCollection.end())
-// 		spellCollection[spell]->launch(target);
-// }

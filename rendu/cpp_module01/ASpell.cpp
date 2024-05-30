@@ -17,19 +17,19 @@ ASpell &ASpell::operator=(ASpell const &object)
     }
     return(*this);
 }
-ASpell::ASpell(std::string const &name, std::string const &effects):_name(name),_effects(effects)
+ASpell::ASpell(std::string const &name, std::string const &effects):_name(name), _effects(effects)
 {
 
 }
 ASpell::~ASpell()
 {
-    
+
 }
-const std::string &ASpell::getName()const
+std::string const &ASpell::getName()const
 {
     return(_name);
 }
-const std::string &ASpell::getEffects()const
+std::string const &ASpell::getEffects()const
 {
     return(_effects);
 }

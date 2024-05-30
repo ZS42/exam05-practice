@@ -6,7 +6,7 @@ Polymorph::Polymorph():ASpell("Polymorph", "turned into a critter")
 }
 Polymorph::Polymorph(Polymorph const &object)
 {
-    (void)object;
+    *this = object;
 }
 Polymorph &Polymorph::operator=(Polymorph const &object)
 {
@@ -19,5 +19,5 @@ Polymorph::~Polymorph()
 }
 ASpell *Polymorph::clone()const
 {
-    return new Polymorph();
+    return (new Polymorph);
 }

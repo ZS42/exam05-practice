@@ -14,11 +14,12 @@ class ASpell
         ASpell();
         ASpell(ASpell const &object);
         ASpell &operator=(ASpell const &object);
+    
         ASpell(std::string const &name, std::string const &effects);
-        virtual ~ASpell();
+        virtual~ASpell();
 
-        const std::string &getName()const;
-        const std::string &getEffects()const;
+        std::string const &getName()const;
+        std::string const &getEffects()const;
 
         void launch(ATarget const &target)const;
 

@@ -6,7 +6,7 @@ Fwoosh::Fwoosh():ASpell("Fwoosh", "fwooshed")
 }
 Fwoosh::Fwoosh(Fwoosh const &object)
 {
-    (void)object;
+    *this = object;
 }
 Fwoosh &Fwoosh::operator=(Fwoosh const &object)
 {
@@ -19,5 +19,5 @@ Fwoosh::~Fwoosh()
 }
 ASpell *Fwoosh::clone()const
 {
-    return new Fwoosh();
+    return (new Fwoosh);
 }
