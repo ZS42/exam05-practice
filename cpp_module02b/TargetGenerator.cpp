@@ -15,7 +15,7 @@ TargetGenerator &TargetGenerator::operator=(TargetGenerator const &object)
 }
 TargetGenerator::~TargetGenerator()
 {
-
+      // add delete like SpellBook
 }
 void TargetGenerator::learnTargetType(ATarget *target)
 {
@@ -33,6 +33,7 @@ void TargetGenerator::forgetTargetType(std::string const &typeName)
 }
 ATarget *TargetGenerator::createTarget(std::string const &typeName)
 {
+   // check if this is ok?
     if (myTargets[typeName])
         return(myTargets[typeName]);
     else
